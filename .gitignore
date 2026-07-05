@@ -12,7 +12,7 @@ __pycache__/
 .vscode/
 
 # Reports
-reports/
+reports/*.pdf
 
 # Streamlit cache
 .streamlit/cache/
