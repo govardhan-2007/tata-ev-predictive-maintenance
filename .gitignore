@@ -20,3 +20,9 @@ reports/
 # OS files
 .DS_Store
 Thumbs.db
+# Temporary / Training files
+deep_learning/data/*.npy
+deep_learning/results/
+deep_learning/models/*.pth
+data/check_dataset.py
+dashboard/dashboard_old.py.py
