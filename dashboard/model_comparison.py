@@ -46,36 +46,4 @@ def render_model_comparison(data):
         "Time (ms)": f"{xgb_time:.2f}"
     })
 
-    # ------------------------
-    # CNN-LSTM
-    # ------------------------
-
-    if st.session_state.sequence_buffer.ready():
-
-        start = time.perf_counter()
-
-        sequence = st.session_state.sequence_buffer.get_sequence()
-
-        cnn = st.session_state.cnn_engine
-
-        cnn_result = cnn.predict(sequence)
-
-        cnn_time = (time.perf_counter() - start) * 1000
-
-        results.append({
-            "Model": "🧠 CNN-LSTM",
-            "Prediction": cnn_result["prediction"],
-            "Confidence": f"{cnn_result['confidence']:.2f}%",
-            "Time (ms)": f"{cnn_time:.2f}"
-        })
-
-    else:
-
-        results.append({
-            "Model": "🧠 CNN-LSTM",
-            "Prediction": "Waiting...",
-            "Confidence": "--",
-            "Time (ms)": "--"
-        })
-
     st.table(results)
