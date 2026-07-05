@@ -1,7 +1,7 @@
 import streamlit as st
 
 from ai.inference import InferenceEngine
-from ai.inference_cnn import CNNInference
+#from ai.inference_cnn import CNNInference
 from ai.inference_xgb import XGBInference
 
 # Uncomment these after creating them
