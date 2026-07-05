@@ -1,5 +1,4 @@
 import joblib
-from tensorflow.keras.models import load_model
 
 
 class ModelLoader:
@@ -9,12 +8,15 @@ class ModelLoader:
         self.models = {
             "Random Forest": "ai/models/random_forest.pkl",
             "XGBoost": "ai/models/xgboost.pkl",
-            "CNN-LSTM": "ai/models/cnn_lstm.keras",
+            #"CNN-LSTM": "ai/models/cnn_lstm.keras",
         }
 
     def load(self, model_name):
 
         if model_name == "CNN-LSTM":
+
+            from tensorflow.keras.models import load_model
+
             return load_model(self.models[model_name])
 
         return joblib.load(self.models[model_name])
