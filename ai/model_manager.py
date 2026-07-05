@@ -11,8 +11,8 @@ from ai.inference_xgb import XGBInference
 
 def initialize_models():
 
-    if "rf_engine" not in st.session_state:
-        st.session_state.rf_engine = InferenceEngine()
+    #if "rf_engine" not in st.session_state:
+        #st.session_state.rf_engine = InferenceEngine()
 
     if "xgb_engine" not in st.session_state:
         st.session_state.xgb_engine = XGBInference()
